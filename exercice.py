@@ -101,10 +101,8 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
 #                        if mem2 == 50:
 #                            validity = False
 #
-#            if validity:
-#                valid.append(True)
-#            else:
-#                valid.append(False)
+#            valid.append(validity)
+#
 #    return valid
 
 def main() -> None:
