@@ -79,6 +79,33 @@ def verify_ages(groups: List[List[int]]) -> List[bool]:
 
     return valid
 
+# Autre Méthode avec 2 loops for
+
+#def verify_ages(groups: List[List[int]]) -> List[bool]:
+#    valid = []
+#    for group in groups:
+#        if len(group) > 10:
+#            valid.append(False)
+#        elif len(group) <= 3:
+#            valid.append(False)
+#        else:
+#            validity = True
+#            for mem in group:
+#                if mem == 25:
+#                    validity = True
+#                    break
+#                elif mem < 18:
+#                    validity = False
+#                elif mem > 70:
+#                    for mem2 in group:
+#                        if mem2 == 50:
+#                            validity = False
+#
+#            if validity:
+#                valid.append(True)
+#            else:
+#                valid.append(False)
+#    return valid
 
 def main() -> None:
     number = -4.325
