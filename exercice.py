@@ -52,30 +52,30 @@ def use_continue() -> None:
             continue
         else:
             print(i)
-
-
+            
 def verify_ages(groups: List[List[int]]) -> List[bool]:
     valid = []
     for group in groups:
-        validT = False
-        if len(group) > 10 or len(group) <= 3:
-            validT = False
+        if len(group) > 10:
+            valid.append(False)
+        elif len(group) <= 3:
+            valid.append(False)
         else:
-            for member in group:
-                if member == 25:
-                    validT = True
-                    break
-                elif member < 18:
-                    validT = False
-                    break
-                elif member > 70:
-                    validT = True
-                    for member in group:
-                        if member == 50:
-                            validT = False
-                    break
-        if validT:
-            valid.append(group)
+            try:
+                group.index(25)
+                valid.append(True)
+            except:
+                if min(group) < 18:
+                    valid.append(False)
+                elif max(group) > 70:
+                    try:
+                        group.index(50)
+                        valid.append(False)
+                    except:
+                        valid.append(True)
+                else:
+                    valid.append(True)
+                
 
     return valid
 
